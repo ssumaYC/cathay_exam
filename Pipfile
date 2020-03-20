@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scrapy = "*"
+requests = "*"
+pymongo = "*"
+"hdfs3" = "*"
+flask = "*"
+flask-restful = "*"
+flask-mongoengine = "*"
+mongoengine-goodjson = "*"
+elasticsearch = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

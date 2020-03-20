@@ -1,0 +1,8 @@
+export SCALA_HOME=/opt/scala-2.12.8
+export HIVE_HOME=/opt/apache-hive-1.2.2-bin
+export HADOOP_HOME=/opt/hadoop-2.8.5
+export SPARK_HOME=/opt/spark-2.4.5-bin-hadoop2.7
+export JAVA_HOME=/opt/jdk1.8.0_241
+export PYSPARK_PYTHON=/usr/local/bin/python3.6
+export HADOOP_CONF_DIR=/opt/hadoop-2.8.5/etc/hadoop
+export PATH=$JAVA_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PATH
