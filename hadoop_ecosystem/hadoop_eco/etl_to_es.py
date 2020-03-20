@@ -6,12 +6,6 @@ import json
 import jieba
 
 
-def add_cut_description(d):
-    new_d = copy(d)
-    new_d['cut_description'] = list(jieba.cut(d['house_description']))
-    return new_d
-
-
 conf = SparkConf().setMaster("local").setAppName("Cathay exam")
 sc = SparkContext(conf=conf)
 hc = HiveContext(sc)
