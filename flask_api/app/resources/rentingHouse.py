@@ -6,7 +6,7 @@ from .toolbox import pretty_json, get_qs_dict
 
 class RentingHouseApi(Resource):
     def get(self, post_id):
-        r_house = RentingHouse.objects.get(post_id=post_id).to_json()
+        r_house = RentingHouse.objects.get_or_404(post_id=post_id).to_json()
         r_house = pretty_json(r_house)
         return Response(r_house, mimetype="application/json", status=200)
 
@@ -15,7 +15,7 @@ class RentingHousesApi(Resource):
     def get(self):
         try:
             qs_dict = get_qs_dict(request)
-            query = qs_dict2mongo_query(qs_dict)
+            query = qs_dict_to_mongo_query(qs_dict)
             r_houses = RentingHouse.objects(__raw__=query)
             num_data = RentingHouse.objects(__raw__=query).count()
             r_houses = [r_house.to_json() for r_house in r_houses]
