@@ -10,7 +10,6 @@ conf = SparkConf().setMaster("local").setAppName("Cathay exam")
 sc = SparkContext(conf=conf)
 hc = HiveContext(sc)
 hc.sql("use cathay_exam")
-rows = hc.sql("select * from renting_house")
 rows_dict = hc.sql('select * from renting_house').rdd.map(lambda r: r.asDict()).collect()
 es = Elasticsearch(["elasticsearch"])
 for d in rows_dict:
